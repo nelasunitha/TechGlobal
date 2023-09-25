@@ -56,7 +56,7 @@ noVowel("125$")  -> "125$"
 */
 console.log('\nOutput for Task3');
 function noVowel(str){
-  let result = ""
+  let result = "";
   let  vowels = 'AEOUIaeoui'
   for(let i =0; i < str.length; i++){
     let char = str[i];
