@@ -209,7 +209,7 @@ function noXInVariables(arr1, arr2){
  function noXInVariables(arr) {
   return arr.map(i => {
     if (isNaN(i)) {
-     return i.replace('x', '').replace('X', '');
+     return i.replaceAll('x', '').replaceAll('X', '');
     }
     return i;
   }).filter(x => x !== '');
@@ -218,3 +218,35 @@ function noXInVariables(arr1, arr2){
  console.log(noXInVariables(["xyz", 123, "#$%"]));
  console.log(noXInVariables(["x", 123, "#$%"]));
  console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]))
+/* *******  Solutions *********
+ Task 1
+const hasLowerCase = (str) =>  str.split('').filter(i => i >= 'a' && i <= 'z').length > 0
+// Task 2
+const noZero = (arr) =>  arr.filter(i => i !== 0)
+// Task 3
+const numberAndSquare = (arr) =>  arr.map(i => [i, i*i])
+// Task 4
+const containsValue = (arr, str) =>  arr.includes(str)
+// Task 5
+const reverseSentence = (str) => {
+    if(!str.includes(' ')) return 'There is not enough words!'
+
+    str =  str.split(' ').reverse().join(' ').toLowerCase()
+    return str.slice(0,1).toUpperCase() + str.slice(1)
+}
+// Task 6
+const removeStringSpecialsDigits = (str) =>  str.split('').filter(i => (i.toLowerCase() >= 'a' && i.toLowerCase() <= 'z' ) || i === ' ').join('')
+// Task 7
+const removeArraySpecialsDigits = (arr) =>  arr.map(i => i.split('').filter(i => i.toLowerCase() >= 'a' && i.toLowerCase() <= 'z').join(''))
+// Task 8
+const getCommons = (arr1, arr2) => {
+    arr1 =  arr1.filter(x => arr2.includes(x))
+
+    let result = [];
+    arr1.forEach(i => {
+     if(!result.includes(i)) result.push(i)
+   })
+
+   return result;
+}
+*/
