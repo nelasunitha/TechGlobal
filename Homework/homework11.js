@@ -176,3 +176,53 @@ console.log(sumDigitsDouble('Ja23abc45'));
 console.log(sumDigitsDouble('Hi-23'));
 console.log(sumDigitsDouble('ab12'));
 console.log(sumDigitsDouble('n0numh3r3'));
+/* Task 8
+Requirement:
+Write a function named countOccurrence() which takes two string arguments
+and returns how many times that the first string can form the second string.
+Examples:
+countOccurrence("Javascript", "Java")  -> 1
+countOccurrence("Hello", "World")  -> 0
+countOccurrence("Can I can a can", "anc")   -> 3
+countOccurrence("Hello", "l")   -> 2
+countOccurrence("IT conversations", "IT")   -> 2*/
+console.log('\nOutput for Task8');
+function countOccurrence(str1, str2) {
+
+    let count = 0;
+    str2 = str2.toLowerCase();
+    let words = str1.split(' ')
+    const sortedStr1 = []
+    let sortedStr2 = str2.split('').sort().join('');
+   for(let i = 0; i < words.length; i++) {
+     let word = words[i].toLowerCase();
+    sortedStr1.push(word.split('').sort().join(''))
+   }
+  //  console.log(sortedStr1, sortedStr2)
+   for(let j =0; j < sortedStr1.length; j++) {
+    let chars =  sortedStr1[j]
+    let k =0, l =0, testChar = "";
+
+    while(k < chars.length && l < sortedStr2.length ) {
+
+      if(chars[k] === sortedStr2[l]) {
+        testChar+= chars[k]
+
+        k++;
+        l++
+      }else k++
+      if(testChar === sortedStr2) {
+        count++;
+        break;
+      }
+    }
+
+   }
+   return count;
+
+  }
+console.log(countOccurrence("Javascript", "Java"));
+console.log(countOccurrence("Hello", "World"));
+console.log(countOccurrence("Can I can a can", "anc"));
+console.log(countOccurrence("Hello", "l"));
+console.log(countOccurrence("IT conversations", "IT"));
