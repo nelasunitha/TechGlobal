@@ -112,7 +112,7 @@ testData.forEach((test, index) => {
    cy.get('button[type = "submit"]').should('have.text', 'SUBMIT')
   })
 
-  it.only("Test Case 10 - Validate the form submission", () => {
+  it("Test Case 10 - Validate the form submission", () => {
     cy.visit('https://techglobal-training.com/frontend/project-1')
 
     cy.get(".field").contains("Full name").parent().find("input").type("Sunitha Nela")
