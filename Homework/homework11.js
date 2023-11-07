@@ -188,7 +188,6 @@ countOccurrence("Hello", "l")   -> 2
 countOccurrence("IT conversations", "IT")   -> 2*/
 console.log('\nOutput for Task8');
 function countOccurrence(str1, str2) {
-
     let count = 0;
     str2 = str2.toLowerCase();
     let words = str1.split(' ')
@@ -207,7 +206,6 @@ function countOccurrence(str1, str2) {
 
       if(chars[k] === sortedStr2[l]) {
         testChar+= chars[k]
-
         k++;
         l++
       }else k++
@@ -216,10 +214,8 @@ function countOccurrence(str1, str2) {
         break;
       }
     }
-
    }
    return count;
-
   }
 console.log(countOccurrence("Javascript", "Java"));
 console.log(countOccurrence("Hello", "World"));
