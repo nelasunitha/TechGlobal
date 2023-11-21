@@ -103,7 +103,7 @@ findLongestWord("      ") 					-> ""
 */
 console.log('\nOutput for Task5');
 function findLongestWord(str) {
-  let maxLen = 0, word = "", longestWord = "";
+  let  word = "", longestWord = "";
   str = str.trim().split(" ");
   if(str.length === 0) return "";
   for(let i =0; i < str.length;i++) {
