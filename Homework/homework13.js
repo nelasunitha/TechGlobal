@@ -166,23 +166,23 @@ const romanMap = {
 let result = 0;
 
 for (let i = 0; i < roman.length; i++) {
-  const currentVal = romanMap[roman[i]];
+  const curVal = romanMap[roman[i]];
   const nextVal = romanMap[roman[i + 1]];
 
-  if (nextVal > currentVal) {
-    result += (nextVal - currentVal);
-    i++; // Skip the next character since it's already considered
+  if (nextVal > curVal) {
+    result += (nextVal - curVal);
+    i++;
   } else {
-    result += currentVal;
+    result += curVal;
   }
 }
 
 return result;
 }
 
-console.log(romanToInt("I"));                // Output: 1
-console.log(romanToInt("IV"));               // Output: 4
-console.log(romanToInt("CXII"));             // Output: 112
-console.log(romanToInt("MMM"));              // Output: 3000
-console.log(romanToInt("MMMDCCCLXXXVIII")); // Output: 3888
-console.log(romanToInt("MDCLXVI"));          // Output: 1666
+console.log(romanToInt("I"));
+console.log(romanToInt("IV"));
+console.log(romanToInt("CXII"));
+console.log(romanToInt("MMM"));
+console.log(romanToInt("MMMDCCCLXXXVIII"));
+console.log(romanToInt("MDCLXVI"));
