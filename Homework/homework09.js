@@ -255,7 +255,7 @@ console.log(findUniques([8, 9], [9, 8, 9]));
 console.log(findUniques([-1, -2], [1, 2]));
 /* Task9
  Requirement:
-Write a function named isPowerOf3() which takes a number argument and returns true if given number is equal to 3 power of the X. Otherwise, return
+Write a function named i which takes a number argument and returns true if given number is equal to 3 power of the X. Otherwise, return
 false.
 NOTE: Numbers that are power of 3 = 1, 3, 9, 27, 81, 243....
 NOTE: Ignore negative scenarios.
