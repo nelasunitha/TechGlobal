@@ -116,7 +116,6 @@ function isNeutral(str1, str2) {
   return result;
 }
 
-// Test cases
 console.log(isNeutral("-", "+"));
 console.log(isNeutral("-+", "-+"));
 console.log(isNeutral("-++-", "-+-+"));
@@ -138,3 +137,31 @@ isTrueOrFalse("Xylophones can obtain Xenon.")    ->  false
 isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK")  -> true
 isTrueOrFalse("All FOoD tAsTEs NIcE for someONe")  -> true
 isTrueOrFalse("Got stuck in the Traffic")  -> false*/
+console.log('Output for Task5');
+function isTrueOrFalse(str) {
+  const alphabets = 'abcdefghijklmnopqqrstuvwxyz';
+  const posRange = alphabets.slice(0, 13);
+  const negRange = alphabets.slice(13);
+
+  const words = str.split(/\s+/).filter(word => /^[a-zA-Z]+$/.test(word));
+
+  let positiveCount = 0;
+  let negativeCount = 0;
+
+  words.forEach(word => {
+      const firstLetter = word[0].toLowerCase();
+      if (posRange.includes(firstLetter)) {
+          positiveCount++;
+      } else if (negRange.includes(firstLetter)) {
+          negativeCount++;
+      }
+  });
+
+  return positiveCount >= negativeCount;
+}
+
+console.log(isTrueOrFalse("A big brown fox caught a bad rabbit"))
+console.log(isTrueOrFalse("Xylophones can obtain Xenon.") );
+console.log(isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK"));
+console.log(isTrueOrFalse("All FOoD tAsTEs NIcE for someONe"))//  -> true
+console.log(isTrueOrFalse("Got stuck in the Traffic") )
