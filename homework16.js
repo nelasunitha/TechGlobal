@@ -54,69 +54,58 @@ console.log(hasNumbers(''));
  console.log(hasNumbers('      '));
  console.log(hasNumbers("!@#$%^&*()_+"))
 
-// /*Task-3
-// Requirement:
-// Write a function named alternatingCases() which takes a string argument and
-// returns the string with alternating capitalization.
-// NOTE: The first letter should always be uppercase and non-letter characters are
-// ignored.
-// Examples:
-// alternatingCases("Hello")  -> "HeLlO"
-// alternatingCases("basketball")  -> "BaSkEtBaLl"
-// alternatingCases("Tech Global")  -> "TeCh GlObAl"
-// alternatingCases("")  -> ""
-// alternatingCases("123!@#aB")  -> "123!@#Ab"*/
-// console.log('Output for Task3\n');
-// function alternatingCases(str) {
-//   let result = ''
-//   for(let i =0; i < str.length; i++) {
-//    if(i%2) result+= str[i].toLowerCase();
-//    else result+= str[i].toUpperCase();
-//   }
-//   return result;
-// }
-// console.log(alternatingCases("Hello"));
-//  console.log(alternatingCases("basketball"));
-//  console.log(alternatingCases("Tech Global"));
-//  console.log(alternatingCases(""));
-//  console.log(alternatingCases("123!@#aB"));
+/*Task-3
+Requirement:
+Write a function named elementLength() which takes an array argument and
+returns the length of each element as a separate array.
+Examples:
+elementLength( [ "Hello", "World" ] )  -> [ 5, 5 ]
+elementLength( [ "Apple", "Banana", "Orange", "Pear" ] )  -> [ 5, 6, 6, 4 ]
+elementLength( ["BMW", "Mercedes", "Audi" ] )  -> [ 3, 8, 4 ]
+elementLength( [ ] )  -> [ ]
+elementLength( [ "Trampoline", "", "Tennis", "Basketball" ] )  -> [ 10, 0, 6, 10 ]"*/
+console.log('Output for Task3\n');
+function elementLength(arr) {
+  return arr.map(el =>  el.length)
+  // let result = []
+  // for(let i =0; i < str.length; i++) {
+  //  result.push(str[i].length)
+  // }
+  // return result;
+}
+console.log(elementLength([ "Hello", "World" ]));
+ console.log(elementLength( ["Apple", "Banana", "Orange", "Pear" ] ));
+ console.log(elementLength(["BMW", "Mercedes", "Audi" ]));
+ console.log(elementLength([ ]));
+ console.log(elementLength(["Trampoline", "", "Tennis", "Basketball" ]));
 
-// /*Task-4
-// Requirement:
-// Write a function named isNeutral() that takes two strings comprised of + and -, and return a new string which shows how the two strings interact in the following way:
-// When positives and positives interact, they remain positive.
-// When negatives and negatives interact, they remain negative.
-// But when negatives and positives interact, they become neutral, and are
-// shown as the number 0.
-// Note: The two strings will be the same length.
-// Examples
-// isNeutral("-", "+")      ->  "0"
-// isNeutral("-+", "-+")  ->   "-+"
-// isNeutral("-++-", "-+-+")            ->  "-+00"
-// isNeutral("--++--", "++--++")      ->  "000000"
-// isNeutral("+++", "+++")            ->  "+++"*/
-// console.log('Output for Task4\n');
-// function isNeutral(str1, str2) {
-//   let result = '';
+/*Task-4
+Requirement:
+Write a function named isArraySumEvenOrOdd() which takes an array of
+numbers and calculates if the sum of its elements is even or odd.
+Note: If the array is empty return even.
+Examples:
+isArraySumEvenOrOdd( [ ] )  -> "even"
+isArraySumEvenOrOdd( [ 0,-1,-5 ] )      -> "even"
+isArraySumEvenOrOdd( [ 7,1, 8,1 ] )     ->  "odd”
+isArraySumEvenOrOdd( [ 0,0 ] )  ->  "even"
+isArraySumEvenOrOdd( [ 1,1,1,1,1 ] )   ->  "odd”*/
+console.log('Output for Task4\n');
+function isArraySumEvenOrOdd(elLengths) {
+  // let elLengths = arr.map(el =>  el.length)
+  let sum =0;
+  for(let i =0; i < elLengths.length; i++) {
+    sum+= elLengths[i];
+  }
+  if((Math.abs(sum)%2)) return  "odd"
+  else return 'even'
+}
 
-//   for (let i = 0; i < str1.length; i++) {
-//     if ((str1[i] === '+' && str2[i] === '-') ||((str1[i] === '-' && str2[i] === '+')) ) {
-//       result += '0';
-//     } else if (str1[i] === '-' && str2[i] === '-') {
-//       result += '-';
-//     } else {
-//       result += '+';
-//     }
-//   }
-
-//   return result;
-// }
-
-// console.log(isNeutral("-", "+"));
-// console.log(isNeutral("-+", "-+"));
-// console.log(isNeutral("-++-", "-+-+"));
-// console.log(isNeutral("--++--", "++--++"));
-// console.log(isNeutral("+++", "+++"));
+console.log(isArraySumEvenOrOdd([ ] ));
+console.log(isArraySumEvenOrOdd( [0,-1,-5 ]));
+console.log(isArraySumEvenOrOdd( [ 7,1, 8,1 ] ));
+console.log(isArraySumEvenOrOdd([ 0,0 ]));
+console.log(isArraySumEvenOrOdd([ 1,1,1,1,1 ]));
 
 // /*Task-5
 // Requirement:
