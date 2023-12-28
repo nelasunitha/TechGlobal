@@ -107,46 +107,64 @@ console.log(isArraySumEvenOrOdd( [ 7,1, 8,1 ] ));
 console.log(isArraySumEvenOrOdd([ 0,0 ]));
 console.log(isArraySumEvenOrOdd([ 1,1,1,1,1 ]));
 
-// /*Task-5
-// Requirement:
-// Write a function named isTrueOrFalse() which takes a string with sets of character/words
-// separated by space. Looking at the first letter of each word (case insensitive-"A" and "a" should
-// be treated the same), you need to determine whether it falls into the positive/first half of the
-// alphabet ("a"-"m") or the negative/second half ("n"-"z"). Return true if there are more (or
-// equal) positive words than negative words, false otherwise.
-// NOTE: alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// NOTE: Ignore all the digits, spaces and special characters.
-// Examples
-// isTrueOrFalse("A big brown fox caught a bad rabbit")  -> true
-// isTrueOrFalse("Xylophones can obtain Xenon.")    ->  false
-// isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK")  -> true
-// isTrueOrFalse("All FOoD tAsTEs NIcE for someONe")  -> true
-// isTrueOrFalse("Got stuck in the Traffic")  -> false*/
-// console.log('Output for Task5');
-// function isTrueOrFalse(str) {
-//   const alphabets = 'abcdefghijklmnopqqrstuvwxyz';
-//   const posRange = alphabets.slice(0, 13);
-//   const negRange = alphabets.slice(13);
+/*Task-5
+Requirement:
+Write a function named reverse() which takes a string argument and returns the given string
+reversed.
+Examples:
+reverse("Hello World")  -> "dlroW olleH"
+reverse("TechGlobal")  -> "labolGhceT"
+reverse("Basketball is fun")  -> "nuf si llabteksaB"
+reverse("")  -> ""
+reverse("Apples 456")  -> "654 selppA"*/
+console.log('Output for Task5\n');
+function reverse(str) {
+let words = str.split(' ').reverse();
+const reversedWords = [];
+for (const word of words) {
+  reversedWords.push(reverseWord(word));
+}
 
-//   const words = str.split(/\s+/).filter(word => /^[a-zA-Z]+$/.test(word));
+return reversedWords.join(" ");
+}
 
-//   let positiveCount = 0;
-//   let negativeCount = 0;
+function reverseWord(word) {
+return word.split("").reverse().join("");
+}
 
-//   words.forEach(word => {
-//       const firstLetter = word[0].toLowerCase();
-//       if (posRange.includes(firstLetter)) {
-//           positiveCount++;
-//       } else if (negRange.includes(firstLetter)) {
-//           negativeCount++;
-//       }
-//   });
 
-//   return positiveCount >= negativeCount;
-// }
+console.log(reverse("Hello World"))
+console.log(reverse("TechGlobal") );
+console.log(reverse("Basketball is fun"));
+console.log(reverse(""))
+console.log(reverse("Apples 456") )
+/* Task-6
+Requirement:
+Write a function named reverseWords() which takes a string argument and returns a string
+with each word within that string reversed but still in the same order as the initial string.
+Examples:
+reverseWords("Hello World")  -> "olleH dlroW"
+reverseWords("TechGlobal")  -> "labolGhceT"
+reverseWords("Basketball is fun")  -> "llabteksaB si nuf"
+reverseWords("")  -> "”
+reverseWords("Apples 456")  -> "selppA 654"*/
+console.log('\nOutput for Task6');
+function reverseWords(str) {
+  const words = str.trim().split(" ");
+  const reversedWords = [];
 
-// console.log(isTrueOrFalse("A big brown fox caught a bad rabbit"))
-// console.log(isTrueOrFalse("Xylophones can obtain Xenon.") );
-// console.log(isTrueOrFalse("CHOCOLATE MAKES A GREAT SNACK"));
-// console.log(isTrueOrFalse("All FOoD tAsTEs NIcE for someONe"))//  -> true
-// console.log(isTrueOrFalse("Got stuck in the Traffic") )
+  for (const word of words) {
+      reversedWords.push(reverseWord(word));
+  }
+
+  return reversedWords.join(" ");
+}
+
+function reverseWord(word) {
+  return word.split("").reverse().join("");
+}
+console.log(reverseWords("Hello World"))
+console.log(reverseWords("TechGlobal") );
+console.log(reverseWords("Basketball is fun"));
+console.log(reverseWords(""))
+console.log(reverseWords("Apples 456") )
